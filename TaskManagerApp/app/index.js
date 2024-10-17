@@ -1,23 +1,20 @@
-// App.js
 import React, { useState } from 'react';
 import { View, FlatList, StyleSheet, Text } from 'react-native';
-import TaskInput from './components/TaskInput';
-import TaskItem from './components/TaskItem';
+import TaskInput from './TaskInput';
+import TaskItem from './TaskItem';
 
 const App = () => {
     const [tasks, setTasks] = useState([]);
 
-    // Add a new task to the list
-    const addTaskHandler = (taskText) => {
+    const addTaskHandler = (taskText, urgency) => {
         if (taskText.trim().length > 0) {
             setTasks((currentTasks) => [
                 ...currentTasks,
-                { text: taskText, completed: false, id: Math.random().toString() },
+                { text: taskText, completed: false, urgency, id: Math.random().toString() },
             ]);
         }
     };
 
-    // Mark task as complete or incomplete
     const toggleCompleteTaskHandler = (taskId) => {
         setTasks((currentTasks) =>
             currentTasks.map((task) =>
@@ -26,7 +23,6 @@ const App = () => {
         );
     };
 
-    // Delete a task from the list
     const deleteTaskHandler = (taskId) => {
         setTasks((currentTasks) => currentTasks.filter((task) => task.id !== taskId));
     };
@@ -52,11 +48,15 @@ const App = () => {
 
 const styles = StyleSheet.create({
     screen: {
-        padding: 50,
+        flex: 1,
+        paddingHorizontal: 20,
+        paddingTop: 50,
+        backgroundColor: '#f0f8ff',
     },
     header: {
-        fontSize: 24,
+        fontSize: 30,
         fontWeight: 'bold',
+        color: '#333',
         marginBottom: 20,
         textAlign: 'center',
     },
