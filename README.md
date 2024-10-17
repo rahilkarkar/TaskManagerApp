@@ -8,6 +8,9 @@ This is a simple Task Manager app built with React Native using Expo. The app al
 - **Delete Task**: Users can remove tasks from the list.
 - **Task List**: Displays all tasks with clear distinctions for completed and incomplete tasks. Urgency levels are color-coded (High: Red, Medium: Yellow, Low: Green) for better visibility.
 
+## Third Party Libraries
+- There are currently no third party libraries being utilized in this program
+
 ## How to Run the Project
 
 
