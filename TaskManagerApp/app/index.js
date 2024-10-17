@@ -4,8 +4,10 @@ import TaskInput from './TaskInput';
 import TaskItem from './TaskItem';
 
 const App = () => {
+    // initial state page
     const [tasks, setTasks] = useState([]);
 
+    // Task handling methods/ abstract method callers
     const addTaskHandler = (taskText, urgency) => {
         if (taskText.trim().length > 0) {
             setTasks((currentTasks) => [
@@ -27,6 +29,7 @@ const App = () => {
         setTasks((currentTasks) => currentTasks.filter((task) => task.id !== taskId));
     };
 
+    // page functionality
     return (
         <View style={styles.screen}>
             <Text style={styles.header}>Task Manager</Text>
@@ -46,6 +49,7 @@ const App = () => {
     );
 };
 
+// page styling
 const styles = StyleSheet.create({
     screen: {
         flex: 1,

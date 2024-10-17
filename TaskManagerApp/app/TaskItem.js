@@ -2,12 +2,14 @@ import React from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 
 const TaskItem = (props) => {
+    // Sets colors for urgency
     const urgencyColors = {
         "High Urgency": '#dc3545',
         "Medium Urgency": '#ffc107',
         "Low Urgency": '#28a745',
     };
 
+    // functionality
     return (
         <View style={[styles.taskItem, { borderLeftColor: urgencyColors[props.task.urgency] }]}>
             <Text
@@ -31,6 +33,7 @@ const TaskItem = (props) => {
     );
 };
 
+// Item Styling
 const styles = StyleSheet.create({
     taskItem: {
         padding: 15,

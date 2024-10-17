@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { View, TextInput, Button, StyleSheet, Picker } from 'react-native';
 
 const TaskInput = (props) => {
+    // initial input states
     const [taskText, setTaskText] = useState('');
     const [urgency, setUrgency] = useState('Medium Urgency');
 
+    // abstracted method callers
     const taskInputHandler = (enteredText) => {
         setTaskText(enteredText);
     };
@@ -14,6 +16,7 @@ const TaskInput = (props) => {
         setTaskText('');
     };
 
+    // input functionality
     return (
         <View style={styles.inputContainer}>
             <TextInput
@@ -37,6 +40,7 @@ const TaskInput = (props) => {
     );
 };
 
+// input styling
 const styles = StyleSheet.create({
     inputContainer: {
         flexDirection: 'column',
